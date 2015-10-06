@@ -7,24 +7,38 @@ window.onload = function(){
   { "name": "Fancy Dress Hanger", "description": ["Keep organized", "On Sale"], "price": 67.32 },
   { "name": "Snarky Britsh Mustache 3-Pack", "description": ["Sharing is caring!", "Hugs not drugs", "As seen on 'So You Think You Can Dance - Nigeria!'"], "price": 1.99 },
 ];
+  
+ 
 
+  function getObject(arrs){
 
-	function addElement(arr){
+    // var divBody = document.createElement('div');
+    // divBody.id = 'divName';
+    // document.body.appendChild(divBody);
 
+    // var parBody = document.createElement('p');
+    // parBody.id = 'parDes';
+    // document.body.appendChild(parBody);
 
-     var cart = document.getElementById('cart1');
-     // console.log(cart);
+    var cart = document.getElementById('container');
 
-		for (var i=0; i<arr.length; i++){ //loop through array
-      console.log(arr[i].name); //prints objects in arrayItems
-      var itemName = document.createElement('div'); //created a div in DOM
-      itemName.innerHTML = arr[i].name; 
-      cart.appendChild(itemName); //
+    for(var i=0; i<arrs.length; i++){ //loop through arrayItems
+      console.log(arrs[i].name);
+      var itemName = document.createElement('h3');
+      itemName.id = 'headName';
+      itemName.innerHTML = arrs[i].name;
+      cart.appendChild(itemName);
 
-      console.log(arr[i].description);
-      var itemDes = document.createElement('')
+      console.log(arrs[i].description);
+      var itemDes = document.createElement('p');
+      itemDes.innerHTML = arrs[i].description;
+      cart.appendChild(itemDes);
 
-	}
-}; 
-addElement(arrayItems);
+      console.log(arrs[i].price);
+      var itemPrice = document.createElement('p');
+      itemPrice.innerHTML = arrs[i].price;
+      cart.appendChild(itemPrice);
+    }
+  }
+  getObject(arrayItems);
 };
